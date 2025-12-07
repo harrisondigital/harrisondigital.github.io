@@ -1,3 +1,15 @@
+// Fix viewport height for mobile browsers
+function setViewportHeight() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setViewportHeight();
+window.addEventListener('resize', setViewportHeight);
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', setViewportHeight);
+}
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger');

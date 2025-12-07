@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --vh: 1vh;
+}
+
 html,
 body {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -138,6 +143,7 @@ body {
   left: 0;
   width: 100vw;
   height: calc(100vh - 64px);
+  height: calc(var(--vh, 1vh) * 100 - 64px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -375,6 +381,15 @@ body {
 
   .hero-content p {
     font-size: 1.2rem;
+  }
+
+  .hero {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    padding: 1rem;
   }
 
   .about h2,
