@@ -24,6 +24,4 @@ dist-ssr
 *.sw?
 
 # Playwright screenshots
-*.png
-*.jpeg
-*.jpg
+.playwright-mcp/

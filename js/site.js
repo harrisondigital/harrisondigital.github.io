@@ -222,20 +222,12 @@ class ParticleSystem {
 
 // Initialize particle system when DOM is ready
 function initParticles() {
-  const system = new ParticleSystem('particles');
-  // Force multiple resizes to ensure layout is fully calculated
-  setTimeout(() => {
-    system.resizeCanvas();
-    system.createParticles();
-  }, 50);
-  setTimeout(() => {
-    system.resizeCanvas();
-    system.createParticles();
-  }, 200);
-  setTimeout(() => {
-    system.resizeCanvas();
-    system.createParticles();
-  }, 500);
+  // Wait for layout to be fully calculated before initializing
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      new ParticleSystem('particles');
+    });
+  });
 }
 
 if (document.readyState === 'loading') {
