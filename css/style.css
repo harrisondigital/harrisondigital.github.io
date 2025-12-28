@@ -8,14 +8,14 @@
   --vh: 1vh;
 }
 
+html {
+  overflow-y: scroll;
+}
 html,
 body {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100vw;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body {
